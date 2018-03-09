@@ -13,3 +13,9 @@ Run mapreduce from commandline:
 ```
 hadoop jar {path to hadoop streaming jar} -mapper {mapper.py} -reducer {reducer.py} -file mapper.py  -file reducer.py -input myinput{specify input} -output joboutput{specify output director reducers will write output to}
 ```
+
+Read results
+`hadoop fs -cat {output directory}/part-00000 | less`
+
+Read end of file
+`hadoop fs -tail {output directory}/part-00000 | less`

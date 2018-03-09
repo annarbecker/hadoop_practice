@@ -1,4 +1,7 @@
 import sys
+# Data from mapper
+# Store     Sale
+# San Jose  12.99
 
 # Key: store name, Value: sale amount
 salesTotal = 0
@@ -12,19 +15,19 @@ for line in sys.stdin:
         # Bad data, skip this line
         continue
 
-    thisStore, thisSale = data
-    thisSale = float(thisSale)
+    store, sale = data
+    sale = float(sale)
 
-    if oldStore and oldStore != thisStore:
+    if oldStore and oldStore != store:
         print "{0}\t{1}".format(oldStore, salesTotal)
-        oldStore = thisStore
+        oldStore = store
         salesTotal = 0
 
-    oldStore = thisStore
+    oldStore = store
 
     # Find highest individual sale for each separate store
-    if thisSale > salesTotal:
-        salesTotal = thisSale
+    if sale > salesTotal:
+        salesTotal = sale
 
     if oldStore != None:
         print "{0}\t{1}".format(oldStore, salesTotal)

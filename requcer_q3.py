@@ -13,7 +13,7 @@ for line in sys.stdin:
         continue
 
     store, sale = data
-    salesTotal =+ float(sale)
+    salesTotal += float(sale)
     totalNumberOfSales += 1
 
     print "{0}\t{1}".format(salesTotal, totalNumberOfSales)
